@@ -8,33 +8,32 @@ public class UserRegistration_Java {
     Scanner sc = new Scanner(System.in);
 
 
-        public void firstNameValidation() {
+    public void firstNameValidation() {
 
 
-            String firstName = sc.next();
+        String firstName = sc.next();
 
-            Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}");
+        Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}");
 
-            Matcher matcher = pattern.matcher(firstName);
+        Matcher matcher = pattern.matcher(firstName);
 
-            if (matcher.matches()) {
-                System.out.println("Valid Name");
-            } else {
-                System.out.println("Not a valid name");
-            }
+        if (matcher.matches()) {
+            System.out.println("Valid Name");
+        } else {
+            System.out.println("Not a valid name");
         }
+    }
 
-        public void lastNameValidation() {
-            String lastName = sc.next();
-            Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}");
-            Matcher matcher = pattern.matcher(lastName);
-            if (matcher.matches()) {
-                System.out.println("Valid last name");
-            } else {
-                System.out.println("Invalid last name");
-            }
+    public void lastNameValidation() {
+        String lastName = sc.next();
+        Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}");
+        Matcher matcher = pattern.matcher(lastName);
+        if (matcher.matches()) {
+            System.out.println("Valid last name");
+        } else {
+            System.out.println("Invalid last name");
         }
-
+    }
 
 
     public void emailValidation() {
@@ -50,12 +49,30 @@ public class UserRegistration_Java {
     }
 
 
+
+    public void mobileNumberValidation() {
+        String mobile = sc.next();
+
+        Pattern pattern = Pattern.compile("^[1-9]{2}+[0-9]{10}$");
+        Matcher matcher = pattern.matcher(mobile);
+
+        if (matcher.matches()) {
+            System.out.println("Mobile Number is valid");
+        } else {
+            System.out.println("Mobile Number is invalid ");
+        }
+    }
+
+    
+
+
+
     public static void main(String[] args) {
 
         UserRegistration_Java obj = new UserRegistration_Java();
         obj.firstNameValidation();
         obj.lastNameValidation();
         obj.emailValidation();
-
+        obj.mobileNumberValidation();
     }
 }
