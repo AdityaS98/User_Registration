@@ -117,6 +117,59 @@ public class UserRegistration_Java {
         }
     }
 
+    public void listOfValidEmails() {
+        System.out.println("Valid Emails following below:");
+        boolean b1 = Pattern.matches("^[a-z]{3}@[a-z]{2,}.[a-z]{3,}$", "abc@yahoo.com");
+        System.out.println("b1 :" + b1);
+        boolean b2 = Pattern.matches("^[a-z]{3}-[0-9]{3}@[a-z]{3,}.[a-z]{2,}$", "abc-100@yahoo.com");
+        System.out.println("b2 :" + b2);
+        boolean b3 = Pattern.matches("^[a-z]{3}.[0-9]{3}@[a-z]{3,}.[a-z]{2,}$", "abc.100@yahoo.com");
+        System.out.println("b3 :" + b3);
+        boolean b4 = Pattern.matches("^[a-z0-9]{2,}@[a-z]{3}.[a-z]{2,}$", "abc111@abc.com");
+        System.out.println("b4 :" + b4);
+        boolean b5 = Pattern.matches("^[a-z]{2,}-[0-9]{2,}@[a-z]{2,}.[a-z]{2,}", "abc-100@abc.net");
+        System.out.println("b5 :" + b5);
+        boolean b6 = Pattern.matches("^[a-z]{3}.[0-9]{3}@[a-z]{3}.[a-z]{3}.[a-z]{2}$", "abc.100@abc.com.au");
+        System.out.println("b6 :" + b6);
+        boolean b7 = Pattern.matches("^[a-z]{3}@[a-z]{2,}.[a-z]{3}.[a-z]{3}$", "abc@gmail.com.com");
+        System.out.println("b7 :" + b7);
+        boolean b8 = Pattern.matches("[a-z]{3,}[+]\\d{2,}@[a-z]{2,}.[a-z]{3,}", "abc+100@gmail.com");
+        System.out.println("b8 :" + b8);
+        boolean b9 = Pattern.matches("^[a-z]{2,}@[0-9]{1,}.[a-z]{2,}$", "abc@1.com");
+        System.out.println("b9 :" + b9);
+    }
+
+    public void listOfinvalidEmail() {
+        System.out.println("InValid Emails following below:");
+        boolean a1 = Pattern.matches("[a-z]{4,}@[a-z].[a-z]{2,}", "abc");
+        System.out.println("a1 :" + a1);
+        boolean a2 = Pattern.matches("[a-z]{3,}@[a-z]{2,}.[a-z]{2,}", "abc@.com.my");
+        System.out.println("a2 :" + a2);
+        boolean a3 = Pattern.matches("[a-z\\d]{3,}@[a-z]{2,}.[a-z]", "abc123@.gmail.a");
+        System.out.println("a3 :" + a3);
+        boolean a4 = Pattern.matches("[a-z\\d]{3,}@[a-z]{2,}.[a-z]{2,}", "abc123@.com");
+        System.out.println("a4 :" + a4);
+        boolean a5 = Pattern.matches("[a-z\\d]{3,}@[a-z]{2,}.[a-z]{2,}", "abc123@.com.com");
+        System.out.println("a5 :" + a5);
+        boolean a6 = Pattern.matches("[a-z]{3,}@[a-z]{2,}.[a-z]{2,}", ".abc@abc.com");
+        System.out.println("a6 :" + a6);
+        boolean a7 = Pattern.matches("[a-z]{3,}@[a-z]{3,}.[a-z]{2,}", "abc()*@gmail.com");
+        System.out.println("a7 :" + a7);
+        boolean a8 = Pattern.matches("[a-z]{3,}@[a-z]{3,}.[a-z]{2,}", "abc@%*.com");
+        System.out.println("a8 :" + a8);
+        boolean a9 = Pattern.matches("[a-z\\d]{3,}@[a-z]{3,}.[a-z]{2,}", "abc..2002@gmail.com");
+        System.out.println("a9 :" + a9);
+        boolean a10 = Pattern.matches("[a-z]{3,}@[a-z]{2,}.[a-z]{2,}", "abc.@gmail.com");
+        System.out.println("a10 :" + a10);
+        boolean a11 = Pattern.matches("[abc]{3,}@[a-z]{2,}.[a-z]{2,}", "abc@abc@gmail.com");
+        System.out.println("a11 :" + a11);
+        boolean a12 = Pattern.matches("[a-z]{3,}@[a-z]{2,}.[a-z]{3,}.[a-z]{2,}", "abc@gmail.com.1a");
+        System.out.println("a12 :" + a12);
+        boolean a13 = Pattern.matches("[abc]{3,}@[a-z]{2,}.[a-z]{2,}.[a-z]{2,}", "abc@gmail.com.aa.au");
+        System.out.println("a13 :" + a13);
+    }
+
+
     public void fourthPasswordValidation() {
         String password = sc.next();
 
@@ -145,6 +198,8 @@ public class UserRegistration_Java {
         obj.secondPasswordValidation();
         obj.thirdPasswordValidation();
         obj.fourthPasswordValidation();
+        obj.listOfValidEmails();
+        obj.listOfinvalidEmail();
     }
 }
 
