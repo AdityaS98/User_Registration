@@ -103,6 +103,20 @@ public class UserRegistration_Java {
         }
     }
 
+    public void thirdPasswordValidation() {
+        String password = sc.next();
+        Pattern pattern = Pattern.compile("[A-Z]{1,}[0-9]{1,}[a-z]{6,}");
+
+        Matcher matcher = pattern.matcher(password);
+
+        if (matcher.matches()) {
+            System.out.println("It is a valid password");
+        } else {
+            System.out.println("It ia an invalid password");
+            thirdPasswordValidation();
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -113,6 +127,7 @@ public class UserRegistration_Java {
         obj.mobileNumberValidation();
         obj.firstPasswordValidation();
         obj.secondPasswordValidation();
+        obj.thirdPasswordValidation();
     }
 }
 
