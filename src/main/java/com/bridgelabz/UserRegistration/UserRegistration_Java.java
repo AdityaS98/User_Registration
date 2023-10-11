@@ -117,6 +117,22 @@ public class UserRegistration_Java {
         }
     }
 
+    public void fourthPasswordValidation() {
+        String password = sc.next();
+
+        Pattern pattern = Pattern.compile("[A-Z]{1,}[0-9]{1,}[!@#$%^&*]{1}[a-z]{6,}");
+        Matcher matcher = pattern.matcher(password);
+
+        if (matcher.matches()) {
+            System.out.println("It is a valid Password");
+        } else {
+            System.out.println("It is not a valid password");
+
+            fourthPasswordValidation();
+        }
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -128,6 +144,7 @@ public class UserRegistration_Java {
         obj.firstPasswordValidation();
         obj.secondPasswordValidation();
         obj.thirdPasswordValidation();
+        obj.fourthPasswordValidation();
     }
 }
 
