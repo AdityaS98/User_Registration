@@ -88,6 +88,21 @@ public class UserRegistration_Java {
 
     }
 
+    public void secondPasswordValidation() {
+        String password = sc.next();
+
+        Pattern pattern = Pattern.compile("[A-Z]{1,}[a-z]{7,}");
+
+        Matcher matcher = pattern.matcher(password);
+
+        if (matcher.matches()) {
+            System.out.println("Password is valid");
+        } else {
+            System.out.println("Password is invalid");
+            secondPasswordValidation();
+        }
+    }
+
 
     public static void main(String[] args) {
 
@@ -97,5 +112,8 @@ public class UserRegistration_Java {
         obj.emailValidation();
         obj.mobileNumberValidation();
         obj.firstPasswordValidation();
+        obj.secondPasswordValidation();
     }
 }
+
+
