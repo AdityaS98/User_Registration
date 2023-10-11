@@ -23,10 +23,23 @@ public class UserRegistration_Java {
         }
     }
 
+    public void lastNameValidation() {
+        String lastName = sc.next();
+        Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}");
+        Matcher matcher = pattern.matcher(lastName);
+        if (matcher.matches()) {
+            System.out.println("Valid last name");
+        } else {
+            System.out.println("Invalid last name");
+        }
+    }
+
+
     public static void main(String[] args) {
 
         UserRegistration_Java obj = new UserRegistration_Java();
         obj.firstNameValidation();
-        
+        obj.lastNameValidation();
+
     }
 }
